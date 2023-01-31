@@ -1,0 +1,110 @@
+.weather__container {
+  --main-bg-clr: #e6f0ff;
+
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--main-bg-clr);
+}
+
+.weather {
+  --card-bg-clr: hsl(215, 100%, 60%);
+
+  padding: 1.5rem;
+  text-align: center;
+  min-width: 40vw;
+  background-color: var(--card-bg-clr);
+  box-shadow: 0 0 1.875rem 0 rgba(0, 0, 0, 0.75);
+  border-radius: 0.625rem;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.weather h1 {
+  margin-bottom: 1rem;
+}
+
+.weather__input-data input {
+  margin-bottom: 1.5rem;
+  min-height: 2.1875rem;
+  width: 100%;
+  border-radius: 1.4375rem;
+  border: 0;
+  padding-inline: 0.5rem;
+  font-size: 1rem;
+}
+
+.weather__input-data input:focus {
+  outline: 0;
+}
+
+.weather__info .location {
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+
+.weather__temp h2 {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.weather__temp .temp-minmax {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.weather__temp .temp-minmax span {
+  display: block;
+}
+
+.wave {
+  margin-top: 0.5rem;
+  min-height: 100px;
+}
+
+.wave > * {
+  width: 200%;
+  bottom: 0;
+  left: -1.5rem;
+  right: -1.5rem;
+  position: absolute;
+  min-height: 100px;
+}
+
+.wave > :first-child {
+  animation: move_wave 3s;
+  animation-delay: 1s;
+  background-size: 50% 100px;
+  z-index: 15;
+  opacity: 0.5;
+}
+
+.wave > :nth-child(2) {
+  animation: move_wave 10s linear infinite;
+  background-size: 50% 120px;
+  z-index: 10;
+  opacity: 0.75;
+}
+
+.wave > :last-child {
+  animation: move_wave 15s linear infinite;
+  background-size: 50% 100px;
+  z-index: 5;
+}
+
+/* animation */
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-30%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-45%) translateZ(0) scaleY(1);
+  }
+}
